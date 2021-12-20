@@ -18,7 +18,17 @@ const routes = [
             component: () => import('pages/Quiz/FlagCaptalQuiz.vue'),
           },
         ]
-      }
+      },
+      {
+        path: '/badges',
+        component: () => import('pages/Badge/Badges.vue'),
+        children: [
+          {
+            path: '/badges/badge',
+            component: () => import('pages/Badge/Badge.vue'),
+          }
+        ]
+      },
     ]
   },
 

@@ -108,8 +108,6 @@ export default {
             answers.value = store.getters.getRandom();
             answers.value.push(flag.value);
 
-            console.log('answer.value', answers.value);
-            
             flag.value.url = '/images/'+ flag.value.country_nm + '.gif';    
             
             shuffleArray(answers.value);

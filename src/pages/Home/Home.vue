@@ -18,7 +18,7 @@
           no-caps
         />
 
-        <!-- <q-btn
+        <q-btn
           to="/home/FlagCaptalQuiz"
           label="수도 맞추기"
           color="primary"
@@ -26,7 +26,7 @@
           rounded
           unelevated
           no-caps
-        /> -->
+        />
       </div>
     </page-body>
   </page>

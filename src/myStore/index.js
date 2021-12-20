@@ -9,25 +9,25 @@ const state = reactive({
       label: '홈'
     },
     {
-      root: '/questions',
-      to: '/questions',
-      icon: 'las la-question-circle',
-      label: '질문'
+      root: '/badges',
+      to: '/badges',
+      icon: 'las la-dragon',
+      label: '뱃지'
     },
-    {
-      root: '/images',
-      to: '/',
-      // to: '/images',
-      icon: 'las la-image',
-      label: '이미지'
-    },
-    {
-      root: '/settings',
-      to: '/',
-      // to: '/images',
-      icon: 'las la-image',
-      label: '이미지'
-    }
+    // {
+    //   root: '/images',
+    //   to: '/',
+    //   // to: '/images',
+    //   icon: 'las la-image',
+    //   label: '이미지'
+    // },
+    // {
+    //   root: '/settings',
+    //   to: '/',
+    //   // to: '/images',
+    //   icon: 'las la-image',
+    //   label: '이미지'
+    // }
   ],
   flags: [
     {
@@ -212,7 +212,7 @@ const state = reactive({
    },
    {
       "index":"31",
-      "country_nm":"조선민주주의인민공화국(북한)",
+      "country_nm":"북한",
       "capital_nm":"평양",
       "continent_nm":"아시아"
    },
@@ -254,13 +254,13 @@ const state = reactive({
    },
    {
       "index":"38",
-      "country_nm":"타이(태국)",
+      "country_nm":"태국",
       "capital_nm":"방콕",
       "continent_nm":"아시아"
    },
    {
       "index":"39",
-      "country_nm":"타이완(대만)",
+      "country_nm":"대만",
       "capital_nm":"타이베이",
       "continent_nm":"아시아"
    },
@@ -579,7 +579,7 @@ const state = reactive({
    {
       "index":"92",
       "country_nm":"볼리비아",
-      "capital_nm":"라파스(행정),수크레(공식)",
+      "capital_nm":"수크레",
       "continent_nm":"아메라카"
    },
    {
@@ -825,7 +825,7 @@ const state = reactive({
    {
       "index":"133",
       "country_nm":"스와질란드",
-      "capital_nm":"음바바네(행정), \n로밤바(공식)",
+      "capital_nm":"로밤바",
       "continent_nm":"아프리카"
    },
    {

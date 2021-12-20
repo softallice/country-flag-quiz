@@ -1,0 +1,1 @@
+"use strict";(self["webpackChunkflag_quiz"]=self["webpackChunkflag_quiz"]||[]).push([[951],{1951:(u,e,s)=>{s.r(e),s.d(e,{default:()=>l});const a={},f=a,l=f}}]);
