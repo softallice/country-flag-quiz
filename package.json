@@ -2,7 +2,7 @@
   "name": "flag-quiz",
   "version": "0.0.1",
   "description": "A Quasar Framework app",
-  "productName": "Flag Quizw",
+  "productName": "국기로 나라이름 맞추기",
   "author": "s991045 <s991045@gmail.com>",
   "private": true,
   "scripts": {
