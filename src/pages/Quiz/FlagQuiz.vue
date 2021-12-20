@@ -15,10 +15,10 @@
         leave-active-class="animated fadeOut slower"
       >
         <div class="row justify-center">
-            <div
-                v-if="flag"
-                class="q-pa-md"
-            >
+            <q-card v-if="flag" flat class="q-pa-md">
+                <q-card-section class="q-pt-xs">
+                    <div class="text-h6 q-mt-sm q-mb-xs">문제. {{ flag.index }}</div>
+                </q-card-section>
                 <q-img
                     :src="flag.url"
                     class="no-pointer-events"
@@ -26,26 +26,26 @@
                     no-spinner
                     style="max-width: 300px"
                 >
-                    <!-- <div class="absolute-bottom-right text-subtitle2">
-                        {{flag.continent_nm}}
-                    </div> -->
                 </q-img>
-                <div class="q-pa-lg  column">
+                <q-card-section>
+                    <div class="q-pa-lg  column">
                     <!-- <div class="column">{{ flag.caption }}</div> -->
-                    <div v-if="answers" class="q-gutter-md">
-                        <div v-for="answer in answers" :key="answer.index">
-                            <q-btn 
-                                style="width:250px"
-                                unelevated 
-                                rounded 
-                                color="primary" 
-                                :label="answer.country_nm"
-                                @click="questionAnswer(answer.country_nm)"
-                            />
+                        <div v-if="answers" class="q-gutter-md">
+                            <div v-for="answer in answers" :key="answer.index">
+                                <q-btn 
+                                    style="width:250px"
+                                    unelevated 
+                                    rounded 
+                                    color="primary" 
+                                    :label="answer.country_nm"
+                                    @click="questionAnswer(answer.country_nm)"
+                                />
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </q-card-section>
+            </q-card>
+            
         </div>
       </transition>
     </page-body>
@@ -78,7 +78,7 @@ export default {
 
         const showNotif = (( trueOrFalse ) => {
             let icon = trueOrFalse ? 'task_alt' : 'announcement' ;
-            let message = trueOrFalse ? '정답입니다.' : '틀렸습니다.' ;
+            let message = trueOrFalse ? '유승혁 !! 정답입니다.' : '틀렸습니다.' ;
             $q.notify({
                 message: message,
                 icon: icon
@@ -130,7 +130,7 @@ export default {
 
                 setTimeout(() => {
                     nextQuestion();
-                }, 3000)
+                }, 2000)
                 
             }
 
