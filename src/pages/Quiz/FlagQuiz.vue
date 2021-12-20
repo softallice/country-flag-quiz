@@ -76,9 +76,9 @@ export default {
             inputArray.sort(()=> Math.random() - 0.5);
         })
 
-        const showNotif = (( trueOrFalse ) => {
+        const showNotif = (( trueOrFalse , answerNm ) => {
             let icon = trueOrFalse ? 'task_alt' : 'announcement' ;
-            let message = trueOrFalse ? '유승혁 !! 정답입니다.' : '틀렸습니다.' ;
+            let message = trueOrFalse ? answerNm + ' 유승혁 !! 정답입니다.'  : '틀렸습니다.' ;
             $q.notify({
                 message: message,
                 icon: icon
@@ -133,8 +133,7 @@ export default {
                 }, 2000)
                 
             }
-
-            showNotif(qna);
+            showNotif(qna, answerNm); 
         })
 
         return {
