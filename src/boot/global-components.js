@@ -4,6 +4,7 @@ const globalComponents = {
   'page': require('components/Page/Page').default,
   'page-header': require('components/Page/PageHeader').default,
   'page-header-btn-back': require('components/Page/PageHeaderBtnBack').default,
+  'page-home': require('components/Page/PageHome').default,
   'page-body': require('components/Page/PageBody').default,
 }
 

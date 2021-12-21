@@ -8,13 +8,17 @@ const routes = [
       {
         path: '/home',
         component: () => import('pages/Home/Home.vue'),
+      },
+      {
+        path: '/quiz',
+        component: () => import('pages/Quiz/Quiz.vue'),
         children: [
           {
-            path: '/home/FlagQuiz',
+            path: '/quiz/FlagQuiz',
             component: () => import('pages/Quiz/FlagQuiz.vue'),
           },
           {
-            path: '/home/FlagCaptalQuiz',
+            path: '/quiz/FlagCaptalQuiz',
             component: () => import('pages/Quiz/FlagCaptalQuiz.vue'),
           },
         ]
@@ -28,6 +32,10 @@ const routes = [
             component: () => import('pages/Badge/Badge.vue'),
           }
         ]
+      },
+      {
+        path: '/settings',
+        component: () => import('pages/Setting/Setting.vue'),
       },
     ]
   },

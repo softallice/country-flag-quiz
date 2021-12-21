@@ -9,25 +9,23 @@ const state = reactive({
       label: '홈'
     },
     {
+      root: '/quiz',
+      to: '/quiz',
+      icon: 'las la-hippo',
+      label: '퀴즈'
+    },
+    {
       root: '/badges',
       to: '/badges',
       icon: 'las la-dragon',
       label: '뱃지'
     },
-    // {
-    //   root: '/images',
-    //   to: '/',
-    //   // to: '/images',
-    //   icon: 'las la-image',
-    //   label: '이미지'
-    // },
-    // {
-    //   root: '/settings',
-    //   to: '/',
-    //   // to: '/images',
-    //   icon: 'las la-image',
-    //   label: '이미지'
-    // }
+    {
+      root: '/settings',
+      to: '/settings',
+      icon: 'las la-otter',
+      label: '설정'
+    }
   ],
   flags: [
     {
@@ -1045,6 +1043,163 @@ const state = reactive({
       "continent_nm":"오세아니아"
    }
  ],
+  lottie: [
+    {
+       "index":1,
+       "lottie_nm":"몬스터깨우기",
+       "lottie_file":"40864-the-awkward-monster.json"
+    },
+    {
+       "index":2,
+       "lottie_nm":"미확인 비행물체",
+       "lottie_file":"61191-ufos.json"
+    },
+    {
+       "index":3,
+       "lottie_nm":"불도저",
+       "lottie_file":"62860-ftx200.json"
+    },
+    {
+       "index":4,
+       "lottie_nm":"관람차",
+       "lottie_file":"64808-ferris-wheel-new.json"
+    },
+    {
+       "index":5,
+       "lottie_nm":"로딩 공룡",
+       "lottie_file":"65358-loading-dino.json"
+    },
+    {
+       "index":6,
+       "lottie_nm":"떠나는 벌",
+       "lottie_file":"66723-bee-lieve.json"
+    },
+    {
+       "index":7,
+       "lottie_nm":"바람개비",
+       "lottie_file":"67522-weee.json"
+    },
+    {
+       "index":8,
+       "lottie_nm":"토마토",
+       "lottie_file":"67846-tomato-animation.json"
+    },
+    {
+       "index":9,
+       "lottie_nm":"태권도",
+       "lottie_file":"69754-olympics-karate.json"
+    },
+    {
+       "index":10,
+       "lottie_nm":"아이스크림",
+       "lottie_file":"70043-ice-cream-bowl-loading.json"
+    },
+    {
+       "index":11,
+       "lottie_nm":"달리는 개",
+       "lottie_file":"70560-puli-dog-run.json"
+    },
+    {
+       "index":12,
+       "lottie_nm":"여우",
+       "lottie_file":"70710-fox-animation.json"
+    },
+    {
+       "index":13,
+       "lottie_nm":"돌고래",
+       "lottie_file":"71696-dolphin.json"
+    },
+    {
+       "index":14,
+       "lottie_nm":"자라나는 나무",
+       "lottie_file":"72702-tree.json"
+    },
+    {
+       "index":15,
+       "lottie_nm":"요가",
+       "lottie_file":"75316-lama-yoga.json"
+    },
+    {
+       "index":16,
+       "lottie_nm":"떠다니는 로못",
+       "lottie_file":"76432-floating-orange-robot.json"
+    },
+    {
+       "index":17,
+       "lottie_nm":"고양이",
+       "lottie_file":"80578-scary-cat.json"
+    },
+    {
+       "index":18,
+       "lottie_nm":"하트",
+       "lottie_file":"85819-kadokado-heart.json"
+    },
+    {
+       "index":19,
+       "lottie_nm":"원숭이",
+       "lottie_file":"86577-meditating-monkey.json"
+    },
+    {
+       "index":20,
+       "lottie_nm":"서프라이즈",
+       "lottie_file":"87619-surprised.json"
+    },
+    {
+       "index":21,
+       "lottie_nm":"로켓",
+       "lottie_file":"88282-rocket.json"
+    },
+    {
+       "index":22,
+       "lottie_nm":"헤이",
+       "lottie_file":"88324-kinetic-typography-hej.json"
+    },
+    {
+       "index":23,
+       "lottie_nm":"산타",
+       "lottie_file":"88472-santa-pop-up.json"
+    },
+    {
+       "index":24,
+       "lottie_nm":"즐거운 휴일",
+       "lottie_file":"88588-happy-holidays.json"
+    },
+    {
+       "index":25,
+       "lottie_nm":"메리크리스마스",
+       "lottie_file":"88726-merry-christmas-santa-claus.json"
+    },
+    {
+       "index":26,
+       "lottie_nm":"크리스마스 강아지",
+       "lottie_file":"88961-christmas-dog.json"
+    },
+    {
+       "index":27,
+       "lottie_nm":"눈사람",
+       "lottie_file":"88964-snowman.json"
+    },
+    {
+       "index":28,
+       "lottie_nm":"음악 시간",
+       "lottie_file":"88994-music-time.json"
+    },
+    {
+       "index":29,
+       "lottie_nm":"손흔드는 아기 우주인",
+       "lottie_file":"89033-star-in-hand-baby-astronaut.json"
+    },
+    {
+       "index":30,
+       "lottie_nm":"운동하는 산타",
+       "lottie_file":"89454-workout-santa.json"
+    },
+    {
+       "index":31,
+       "lottie_nm":"미소짓는 별",
+       "lottie_file":"89881-smiling-star.json"
+    }
+  ],
   usePageTransition: false,
   iosBrowserSwipingBack: false
 })

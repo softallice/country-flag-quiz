@@ -3,7 +3,7 @@
     <page-header>
       <template #buttons-left>
         <page-header-btn-back
-          label="홈"
+          label="퀴즈"
         />
       </template>
       <template #title>수도 맞추기</template>
@@ -17,7 +17,7 @@
         <div class="row justify-center">
             <q-card v-if="flag" flat class="q-pa-md">
                 <q-card-section class="q-pt-xs">
-                    <div class="text-h6 q-mt-sm q-mb-xs">문제. {{ flag.index }}</div>
+                    <div class="text-h6 q-mt-sm q-mb-xs">문제 {{ flag.index }}. {{flag.country_nm}} </div>
                 </q-card-section>
                 <q-img
                     :src="flag.url"
@@ -53,9 +53,10 @@
 </template>
 
 <script>
-import { onActivated, onDeactivated, ref } from 'vue'
-import { useQuasar } from 'quasar'
-import store from 'src/myStore'
+import { onActivated, onDeactivated, ref } from 'vue';
+import { useQuasar } from 'quasar';
+import store from 'src/myStore';
+import localInfo from 'src/use/useLocalDB';
 
 export default {
   name: 'Flag',
@@ -70,6 +71,11 @@ export default {
 
         let questionCount = (()=>{
             questionIndex += 1;
+            capitalScore();
+        })
+
+        const capitalScore = ( async () => {
+             await localInfo.setQuizeScore('capital', 1 );
         })
 
         const shuffleArray = ((inputArray) => {
@@ -78,10 +84,11 @@ export default {
 
         const showNotif = (( trueOrFalse , answerNm ) => {
             let icon = trueOrFalse ? 'task_alt' : 'announcement' ;
-            let message = trueOrFalse ? answerNm + ' 유승혁 !! 정답입니다.'  : '틀렸습니다.' ;
+            let message = trueOrFalse ? answerNm + '참 잘했어요 !! 정답입니다.'  : '틀렸습니다.' ;
             $q.notify({
                 message: message,
-                icon: icon
+                icon: icon,
+                color: trueOrFalse ? 'primary' : 'secondary'
             })
         })
 
