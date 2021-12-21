@@ -6,7 +6,9 @@
     <page-body>
         <div>
             <q-banner inline-actions class="text-white bg-primary">
-                현재 점수는 <span class="text-h6 text-weight-bold text-orange-3"> {{score}} </span> 입니다. 현재 뱃지는 <span class="text-h6 text-weight-bold text-orange-3"> {{badgeCnt}} </span>개 입니다.
+                현재 점수는 <span class="text-h6 text-weight-bold text-orange-3"> {{score}} </span> 입니다. 
+                뱃지 <span class="text-h6 text-weight-bold text-orange-3"> {{badgeCnt}} </span>개를 얻었습니다.
+                뱃지는 5점당 하나씩 얻을수 있습니다. 
                 
             </q-banner>
         </div>

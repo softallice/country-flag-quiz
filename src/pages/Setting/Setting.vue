@@ -4,7 +4,7 @@
       <template #title>설정하기 </template>
     </page-header>
     <page-body>
-        <div class="q-pa-md my-file"> 
+        <!-- <div class="q-pa-md my-file"> 
             <q-file
                 v-model="mobileImage"
                 label="사진을 선택해 주세요"
@@ -19,7 +19,7 @@
                     <q-icon name="close" @click.stop="mobileImage = null" class="cursor-pointer" />
                 </template>
             </q-file>
-        </div>
+        </div> -->
     </page-body>
   </page>
 </template>
