@@ -66,16 +66,17 @@ export default {
 
         let pocket = ref();
         let answers = ref();
-        let questionIndex = 1;
+        let questionIndex = ref(1);
 
 
         let questionCount = (()=>{
-            questionIndex += 1;
+            questionIndex.value += 1;
             pocketScore();
         })
 
         const pocketScore = ( async () => {
              await localInfo.setQuizeScore('pocket', 1 );
+             await localInfo.setQuizelv('pocket', 1 );
         })
 
         const shuffleArray = ((inputArray) => {
@@ -92,13 +93,18 @@ export default {
             })
         })
 
-        onActivated(() => {
-            pocket.value = store.getters.getPocket(String(questionIndex));
+        onActivated(async () => {
+            let lv = await localInfo.getQuizeLv('pocket');
+            questionIndex.value = lv.lv;
+
+            // console.log('questionIndex.value',lv)
+            
+            pocket.value = store.getters.getPocket(String(questionIndex.value));
             answers.value = store.getters.getPocketRandom()
             answers.value.push(pocket.value);
 
             // pocket.value.url = '/images/'+ pocket.value.country_nm + '.gif';    
-            console.log('answers.value' , answers.value);
+            
 
             shuffleArray(answers.value);
         })
@@ -112,10 +118,10 @@ export default {
             pocket.value = null;
             answers.value = null;
 
-            pocket.value = store.getters.getPocket(String(questionIndex));
+            pocket.value = store.getters.getPocket(String(questionIndex.value));
             answers.value = store.getters.getPocketRandom();
 
-            console.log('answers.value : ', answers.value);
+            // console.log('answers.value : ', answers.value);
             answers.value.push(pocket.value);
 
             // pocket.value.url = '/images/'+ pocket.value.country_nm + '.gif';    

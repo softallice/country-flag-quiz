@@ -120,13 +120,12 @@ export default {
     const pocketScore = ref(0);
 
     onActivated( async ()=>{
-      init();
+      await init();
     })
 
     const init = ( async () =>{
       let user = await localInfo.getUserAll();
       
-
       if (user.length === 0 ) {
         prompt.value = true;
       } else {

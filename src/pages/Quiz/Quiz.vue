@@ -38,10 +38,10 @@
           no-caps
         />
 
-        
+
       </div>
     </page-body>
-    <q-dialog v-model="prompt" persistent>
+    <!-- <q-dialog v-model="prompt" persistent>
       <q-card style="min-width: 350px">
         <q-card-section>
           <div class="text-h6">이름</div>
@@ -56,7 +56,7 @@
           <q-btn flat label="저장" @click="saveUser" />
         </q-card-actions>
       </q-card>
-    </q-dialog>
+    </q-dialog> -->
   </page>
 </template>
 
@@ -71,26 +71,26 @@ export default {
     const userNm  = ref('');   
 
     onActivated( async ()=>{
-      init();
+      // await init();
     })
 
-    const init = ( async () =>{
-      let user = await localInfo.getUserAll();
-      console.log(user)
-      if (user.length === 0 ) {
-        prompt.value = true;
-      }
-    })
+    // const init = ( async () =>{
+    //   let user = await localInfo.getUserAll();
+    //   console.log(user)
+    //   if (user.length === 0 ) {
+    //     prompt.value = true;
+    //   }
+    // })
 
-    const saveUser = (() => {
-      localInfo.setUser(userNm.value);
-      prompt.value = false;
-    })
+    // const saveUser = (() => {
+    //   localInfo.setUser(userNm.value);
+    //   prompt.value = false;
+    // })
 
     return {
-      prompt,
-      userNm,
-      saveUser
+      // prompt,
+      // userNm,
+      // saveUser
     }
   }
 }

@@ -138,6 +138,7 @@ export default {
     const zeroInit = (async () => {
         await localInfo.deleteCollection('scores');
         await localInfo.deleteCollection('users');
+        await localInfo.deleteCollection('lvs');
         $router.replace('/Home');
     })
 

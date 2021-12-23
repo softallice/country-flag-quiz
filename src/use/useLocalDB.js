@@ -5,11 +5,9 @@ let db = new Localbase('db');
 
 const getUserAll = ( async ( ) => {
     let response;
-    try {
-        response = await db.collection('users').get()
-    } catch(e) {
-        console.log('error', e);
-    }
+    
+    response = await db.collection('users').get()
+    
     
     return response;
 })
@@ -51,10 +49,19 @@ const initScore = ( async () => {
         score: 0
     }; 
 
+    // 문제 저장
+    let pocketLv = {
+        id: 1, 
+        name: 'pocket',
+        lv: 1
+    }; 
+
 
     await db.collection('scores').add(country) ;
     await db.collection('scores').add(capital) ;
     await db.collection('scores').add(pocket) ;
+
+    await db.collection('lvs').add(pocketLv) ;
 })
 
 const getQuizeScore = ( async ( flag ) => {
@@ -71,6 +78,18 @@ const getQuizeScore = ( async ( flag ) => {
     return orgScore;
 })
 
+const getQuizeLv = ( async ( flag ) => {
+    let id = 1;
+    
+    if (flag === 'pocket' ) {
+        id = 1;
+    } 
+    
+    let lv = await db.collection('lvs').doc({ id: id }).get();
+
+    return lv;
+})
+
 const setQuizeScore = ( async ( flag, score ) => {
     let id = 1;
     
@@ -84,6 +103,21 @@ const setQuizeScore = ( async ( flag, score ) => {
 
     await db.collection('scores').doc({ id: id }).update({
         score: orgScore.score + score
+      }) ;
+})
+
+const setQuizelv = ( async ( flag, lv ) => {
+    let id = 1;
+    
+    if (flag === 'pocket' ) {
+        id = 1;
+    } 
+
+    let lvNo = await db.collection('lvs').doc({ id: id }).get();
+
+    
+    await db.collection('lvs').doc({ id: id }).update({
+        lv: lvNo.lv + lv
       }) ;
 })
 
@@ -128,6 +162,8 @@ const localInfo = {
     setUser,
     initScore,
     getQuizeScore,
+    setQuizelv,
+    getQuizeLv,
     setQuizeScore,
     getImage,
     getImageAll,
