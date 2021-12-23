@@ -21,6 +21,10 @@ const routes = [
             path: '/quiz/FlagCaptalQuiz',
             component: () => import('pages/Quiz/FlagCaptalQuiz.vue'),
           },
+          {
+            path: '/quiz/PocketQuiz',
+            component: () => import('pages/Quiz/PocketQuiz.vue'),
+          },
         ]
       },
       {

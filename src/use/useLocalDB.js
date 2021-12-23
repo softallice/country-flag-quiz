@@ -45,16 +45,25 @@ const initScore = ( async () => {
         score: 0
       }; 
 
+    let pocket = {
+        id: 3, 
+        name: 'pocket',
+        score: 0
+    }; 
+
 
     await db.collection('scores').add(country) ;
     await db.collection('scores').add(capital) ;
+    await db.collection('scores').add(pocket) ;
 })
 
 const getQuizeScore = ( async ( flag ) => {
     let id = 1;
     
-    if (flag != 'country' ) {
+    if (flag === 'capital' ) {
         id = 2;
+    } else if ( flag === 'pocket') {
+        id = 3;
     }
     
     let orgScore = await db.collection('scores').doc({ id: id }).get();
@@ -65,8 +74,10 @@ const getQuizeScore = ( async ( flag ) => {
 const setQuizeScore = ( async ( flag, score ) => {
     let id = 1;
     
-    if (flag != 'country' ) {
+    if (flag === 'capital' ) {
         id = 2;
+    } else if ( flag === 'pocket') {
+        id = 3;
     }
     
     let orgScore = await db.collection('scores').doc({ id: id }).get();
@@ -106,6 +117,11 @@ const getImageAll = (async ( ) => {
     return response;
 })
 
+// 컬랙션 삭제
+const deleteCollection = ( async ( collection ) => {    
+    await db.collection(collection).delete() ;
+})
+
 const localInfo = {
     getUser,
     getUserAll,
@@ -115,7 +131,8 @@ const localInfo = {
     setQuizeScore,
     getImage,
     getImageAll,
-    setImage
+    setImage,
+    deleteCollection
 };
 
 export default localInfo;

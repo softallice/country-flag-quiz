@@ -33,23 +33,34 @@
         </div>
       <!-- 스코어 -->
         <div class="q-pa-md row items-start q-gutter-md justify-between">
+          <!-- 나라 -->
           <q-card flat  class="score-card text-center">
             <q-card-section>
-              <div class="text-h6 text-weight-medium ">나라 점수</div>
+              <div class="text-h7 text-weight-medium ">나라점수</div>
             </q-card-section>
 
             <q-card-section class="q-pt-none text-h4 text-weight-bold text-indigo-6">
               {{countryScore}}
             </q-card-section>
           </q-card>
-
+          <!-- 수도 -->
           <q-card flat  class="score-card text-center">
             <q-card-section>
-              <div class="text-h6 text-weight-medium">수도 점수</div>
+              <div class="text-h7 text-weight-medium">수도점수</div>
             </q-card-section>
 
             <q-card-section class="q-pt-none text-h4 text-weight-bold text-indigo-6 text-center">
               {{capitalScore}}
+            </q-card-section>
+          </q-card>
+          <!-- 포켓몬 -->
+          <q-card flat  class="score-card text-center">
+            <q-card-section>
+              <div class="text-h7 text-weight-medium">포켓점수</div>
+            </q-card-section>
+
+            <q-card-section class="q-pt-none text-h4 text-weight-bold text-indigo-6 text-center">
+              {{pocketScore}}
             </q-card-section>
           </q-card>
         </div>
@@ -80,7 +91,7 @@
         </q-card-section>
 
         <q-card-actions align="right" class="text-primary">
-          <q-btn flat label="취소" v-close-popup />
+          <!-- <q-btn flat label="취소" v-close-popup /> -->
           <q-btn flat label="저장" @click="saveUser" />
         </q-card-actions>
       </q-card>
@@ -91,7 +102,7 @@
 <script>
 import { onActivated, ref } from 'vue';
 import localInfo from 'src/use/useLocalDB';
-import store from 'src/myStore'
+import store from 'src/myStore';
 
 import LottieAnimation  from 'src/components/Lottie/LottieAnimation.vue'
 
@@ -106,6 +117,7 @@ export default {
     const userNm = ref('');   
     const countryScore = ref(0);
     const capitalScore = ref(0);
+    const pocketScore = ref(0);
 
     onActivated( async ()=>{
       init();
@@ -121,8 +133,10 @@ export default {
         userNm.value = user[0].user;
         let couScore = await localInfo.getQuizeScore('country');
         let capScore = await localInfo.getQuizeScore('capital');
+        let pocScore = await localInfo.getQuizeScore('pocket');
         countryScore.value = couScore.score;
         capitalScore.value = capScore.score;
+        pocketScore.value = pocScore.score;
       }
 
 
@@ -150,6 +164,7 @@ export default {
       userNm,
       countryScore,
       capitalScore,
+      pocketScore,
       refresh
     }
   }
@@ -166,5 +181,5 @@ export default {
 
 .score-card
   width: 100%
-  max-width: 150px
+  max-width: 90px
 </style>

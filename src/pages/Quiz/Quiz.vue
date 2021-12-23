@@ -27,6 +27,18 @@
           unelevated
           no-caps
         />
+
+        <q-btn
+          to="/quiz/PocketQuiz"
+          label="포켓몬 맞추기"
+          color="primary"
+          class="full-width q-mb-md"
+          rounded
+          unelevated
+          no-caps
+        />
+
+        
       </div>
     </page-body>
     <q-dialog v-model="prompt" persistent>
